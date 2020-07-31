@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('create', 'TweetController@create');
+Route::post('create', 'TweetController@store');
+
+Route::get('show', 'TweetController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
