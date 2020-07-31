@@ -44,6 +44,6 @@ class User extends Authenticatable
      */
     public function tweets()
     {
-        return $this->hasMany('App\Tweet');
+        return $this->hasMany('App\Tweet','user_id','id');
     }
 }

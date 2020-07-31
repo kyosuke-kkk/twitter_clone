@@ -29,9 +29,6 @@ class HomeController extends Controller
         $tweets = DB::table('tweets')->orderBy('created_at','desc')->get();
         // $tweet = DB::table('tweets')->find(1);
         // dd($tweet->user()->name);
-        $user = DB::table('users')->find(3);
-        return view('home', [
-            'tweets' => $tweets,
-            'user' => $user
-        ]);}
+        // $user = DB::table('users')->find(3);
+        return view('home', compact('tweets'));}
 }
