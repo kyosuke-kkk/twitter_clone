@@ -45,7 +45,8 @@ class TweetController extends Controller
         $tweet->tweet = $request->tweet;
         $tweet->user_id = Auth::id();
         $tweet->save();
-        echo "ツイートしました。";
+        $tweets = Tweet::orderby('created_at','desc')->get();
+        return view('home',compact('tweets'));
     }
     
 
