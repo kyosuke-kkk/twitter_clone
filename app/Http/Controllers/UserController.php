@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\Tweet;
 
 class UserController extends Controller
 {
@@ -56,9 +57,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(int $userId)
     {
-        //
+        $user = User::where('id',$userId)->first();
+        //dd($user);
+        if(is_null($user)){
+            echo "ユーザーが存在しません";
+            die();
+        };
+        $tweets = Tweet::where('user_id',$userId)->orderby('created_at','desc')->get();
+        return view('mypage',compact('tweets','user'));
     }
 
     /**

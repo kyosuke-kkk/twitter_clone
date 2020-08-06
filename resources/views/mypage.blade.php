@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<h1>Home</h1>
+<h1>{{ $user->name }}</h1>
 {!! Form::open(['action' => 'TweetController@store']) !!}
         <div class="form-group">
             {!! Form::label('Tweet', 'Tweet') !!}

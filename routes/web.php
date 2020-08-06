@@ -21,6 +21,7 @@ Route::get('create', 'TweetController@create');
 Route::post('create', 'TweetController@store');
 
 Route::get('show', 'TweetController@show');
+Route::get('show/{id}', 'UserController@show')->name('mypage');
 
 Auth::routes();
 
