@@ -1,0 +1,23 @@
+.tweet-card {
+    border: ridge 1px rgb(22, 21, 21);
+    margin-top: 3px;
+    text-align: center;
+    /* border-collapse: separate; */
+}
+
+.tweet-card-header {
+
+}
+
+.tweet-card-username {
+    display: inline-block;
+    width: auto;
+    padding-right: 3px;
+    margin-left: 10px;
+}
+
+.tweet-card-date {
+    display: inline-block;
+    margin-right: 3px;
+    margin-left: 10px;
+}
