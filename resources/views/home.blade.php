@@ -15,15 +15,9 @@
 
     @foreach($tweets as $tweet)
         <div class="tweet-card">
-            <table>
-                <tr class="tweet-card-header">
-                        <td class="tweet-card-username">{{ $tweet->user->name }}</td>     <td class="tweet-card-date">{{ $tweet->created_at }}</td>
-                </tr>
-                
-                <tr>
-                    <td class="tweet-card-body">{{ $tweet->tweet }}</td><br><br>
-                </tr>
-            </table>
+                <div class="tweet-card-username">{{ $tweet->user->name }}</div>
+                <div class="tweet-card-date">{{ $tweet->created_at }}</div>
+                <div class="tweet-card-body">{{ $tweet->tweet }}</div>
         </div>
 @endforeach
 </div>
