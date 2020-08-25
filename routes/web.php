@@ -16,14 +16,17 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+//'/home'を削除することによって初期画面に飛ばない
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('tweets', 'TweetsController');
 
 Route::get('create', 'TweetController@create');
 Route::post('create', 'TweetController@store');
-
 Route::get('show', 'TweetController@show');
+Route::delete('delete/{id}', 'TweetController@destroy');
+
 Route::get('show/{id}', 'UserController@show')->name('mypage');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

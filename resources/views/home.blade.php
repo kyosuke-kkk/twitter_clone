@@ -18,7 +18,16 @@
                 <div class="tweet-card-username">{{ $tweet->user->name }}</div>
                 <div class="tweet-card-date">{{ $tweet->created_at }}</div>
                 <div class="tweet-card-body">{{ $tweet->tweet }}</div>
+
+                <!-- <form method="post" action="delete/{$tweet->id"> -->
+                <br>
+                <form method="post" action="{{ action('TweetController@destroy', $tweet->id) }}">
+                    {{ csrf_field() }}
+                    {{ method_field('delete') }}
+                    <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("君は本当に削除するつもりかい？");'>
+                </form>
         </div>
+        
 @endforeach
 </div>
 @endsection

@@ -90,8 +90,11 @@ class TweetController extends Controller
      * @param  \App\Tweet  $tweet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tweet $tweet)
+    public function destroy(Int $tweet_id)
     {
-        //
+        $tweet = Tweet::find($tweet_id);
+        //dd($tweet);
+        $tweet->delete();
+        return redirect('home');
     }
 }
