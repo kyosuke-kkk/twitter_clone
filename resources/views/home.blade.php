@@ -21,11 +21,13 @@
 
                 <!-- <form method="post" action="delete/{$tweet->id"> -->
                 <br>
+                @if($tweet->user_id == Auth::id())
                 <form method="post" action="{{ action('TweetController@destroy', $tweet->id) }}">
                     {{ csrf_field() }}
                     {{ method_field('delete') }}
                     <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("君は本当に削除するつもりかい？");'>
                 </form>
+                @endif
         </div>
         
 @endforeach
